@@ -83,10 +83,14 @@ WSGI_APPLICATION = 'concecionario.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='database-concecionario.cvzutg5zpy5h.us-east-2.rds.amazonaws.com',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'concecionariobd',
+        'USER': 'concecionario',
+        'PASSWORD': 'niza1828',
+        'HOST': 'database-concecionario.cvzutg5zpy5h.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+    }
     
 }
 
