@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'concecionario.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://concecionario_user:HRbOqL6q7aMkTWGtPVDY5DqkY3gx0b3L@dpg-cifm92tgkuvojjbm840g-a.oregon-postgres.render.com/concecionario',
+        default='database-concecionario.cvzutg5zpy5h.us-east-2.rds.amazonaws.com',
         conn_max_age=600
     )
     
