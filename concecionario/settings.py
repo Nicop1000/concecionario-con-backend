@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'concecionario.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
+        default='postgres://concecionario_user:HRbOqL6q7aMkTWGtPVDY5DqkY3gx0b3L@dpg-cifm92tgkuvojjbm840g-a.oregon-postgres.render.com/concecionario',
         conn_max_age=600
     )
     
