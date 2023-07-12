@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'vehiculos',
     'rest_framework',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -153,7 +154,7 @@ if not DEBUG:
     # #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
     # STATIC_URL = '/static/'
     #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     
     
 
@@ -166,6 +167,26 @@ if not DEBUG:
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, '/static/'),)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+    AWS_STORAGE_BUCKET_NAME = 'concecionario'
+    AWS_ACCESS_KEY_ID = 'AKIA4LNHMBCNGFFQE2GM'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    DEFAULT_FILE_STORAGE = 'concecionario.custom_storages.MediaStorage'
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+    AWS_LOCATION = 'static'
+    AWS_QUERYSTRING_AUTH = False
+    STATIC_URL = "https://s3.amazonaws.com/%s/static/" % AWS_STORAGE_BUCKET_NAME
+    AWS_DEFAULT_ACL = None
+    STATICFILES_LOCATION = 'static'
+    MEDIAFILES_LOCATION = 'media'
+    STATICFILES_STORAGE = 'concecionario.custom_storages.StaticStorage'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
