@@ -165,8 +165,8 @@ if not DEBUG:
     # DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStore'
 
     # STATICFILES_DIRS = (os.path.join(BASE_DIR, '/static/'),)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+   # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     AWS_STORAGE_BUCKET_NAME = 'concecionario'
     AWS_ACCESS_KEY_ID = 'AKIA4LNHMBCNGFFQE2GM'
