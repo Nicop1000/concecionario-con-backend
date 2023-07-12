@@ -6,8 +6,8 @@ settings = LazySettings()
 
 class MediaStorage(S3Boto3Storage):
     location = ""
-    bucket_name = settings.AWS_MEDIA_STORAGE_BUCKET_NAME
-    access_key = settings.AWS_MEDIA_ACCESS_KEY_ID
-    secret_key = settings.AWS_MEDIA_SECRET_ACCESS_KEY
-    region_name = settings.AWS_MEDIA_S3_REGION_NAME
-    custom_domain = settings.AWS_MEDIA_S3_CUSTOM_DOMAIN
+    bucket_name = settings.AWS_STORAGE_BUCKET_NAME
+    access_key = settings.AWS_ACCESS_KEY_ID
+    secret_key = settings.AWS_SECRET_ACCESS_KEY
+    region_name = settings.AWS_S3_REGION_NAME
+    custom_domain = settings.AWS_S3_CUSTOM_DOMAIN
