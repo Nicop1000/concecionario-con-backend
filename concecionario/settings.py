@@ -152,6 +152,7 @@ if not DEBUG:
     STATIC_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    
 
     # s3 public media settings
 
@@ -160,7 +161,7 @@ if not DEBUG:
     DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStore'
 
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'build/static'),)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
