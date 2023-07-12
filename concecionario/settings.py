@@ -172,7 +172,7 @@ if not DEBUG:
     AWS_ACCESS_KEY_ID = 'AKIA4LNHMBCNGFFQE2GM'
     AWS_SECRET_ACCESS_KEY = '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'
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-    DEFAULT_FILE_STORAGE = 'concecionario.storage_backends.MediaStore'
+    DEFAULT_FILE_STORAGE = 'concecionario.custom_storages.MediaStorage'
     AWS_S3_OBJECT_PARAMETERS = {
         'CacheControl': 'max-age=86400',
     }
@@ -182,7 +182,7 @@ if not DEBUG:
     AWS_DEFAULT_ACL = None
     STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
-    STATICFILES_STORAGE = 'concecionario.custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'concecionario.backends.s3boto3.S3Boto3Storage'
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
