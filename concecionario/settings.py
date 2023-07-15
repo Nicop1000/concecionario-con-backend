@@ -168,9 +168,9 @@ if not DEBUG:
    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-    AWS_STORAGE_BUCKET_NAME = 'concecionario'
-    AWS_ACCESS_KEY_ID = 'AKIA4LNHMBCNGFFQE2GM'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     AWS_S3_OBJECT_PARAMETERS = {
